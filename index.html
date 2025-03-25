@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        div{
+            background-color: white;
+            margin: 150px;
+            border: 30px;
+            
+        }
+        
+    </style>
+</head>
+<body>
+
+<center>
+    <h2>Tip Calculator</h2>
+</center>
+<div>
+    <p>Enter the bill amount and tip percentage to calculate the total.</p>
+
+    <label>Bill amount:</label>
+    <input type="number" id="bill" placeholder="Enter bill amount"><br><br>
+
+    <label>Tip percentage:</label>
+    <input type="number" id="tip" placeholder="Enter tip percentage"><br><br>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <p>Total: <span id="total">0.00</span></p>
+</div>
+    <script>
+        function calculate() {
+            let bill = parseFloat(document.getElementById("bill").value);
+            let tip = parseFloat(document.getElementById("tip").value);
+
+            let total = bill + (bill * tip / 100);
+            document.getElementById("total").textContent = total.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
